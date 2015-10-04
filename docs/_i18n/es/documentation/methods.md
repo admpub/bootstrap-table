@@ -5,7 +5,7 @@
 Sintaxis para llamar a un método: `$('#table').bootstrapTable('method', parameter);`.
 
 <table class="table"
-       data-toggle="table"
+       id="m"
        data-search="true"
        data-show-toggle="true"
        data-show-columns="true"
@@ -31,8 +31,15 @@ Sintaxis para llamar a un método: `$('#table').bootstrapTable('method', paramet
     <tr>
         <td>getData</td>
         <td>useCurrentPage</td>
-        <td>Retorna los datos cargados en la tabla en el momento que se llama este método. Si se setea useCurrentPage a true se devolverá los datos mostrados en la página
-        actual</td>
+        <td>Retorna los datos cargados en la tabla en el momento que se llama este método. Si se setea useCurrentPage a true se devolverá los datos mostrados en la página actual.</td>
+    </tr>
+    <tr>
+        <td>getRowByUniqueId</td>
+        <td>id</td>
+        <td>
+        Se obtiene el dato de la tabla que contiene el id pasado por parámetro<br>
+        Ejemplo: $('#myTable').bootstrapTable('getRowByUniqueId', "122")
+        </td>
     </tr>
     <tr>
         <td>load</td>
@@ -217,6 +224,11 @@ Sintaxis para llamar a un método: `$('#table').bootstrapTable('method', paramet
         <td>Oculta la columna especificada.</td>
     </tr>
     <tr>
+        <td>getHiddenColumns</td>
+        <td>-</td>
+        <td>Obtiene las columnas ocultas.</td>
+    </tr>
+    <tr>
         <td>scrollTo</td>
         <td>value</td>
         <td>Setea la posición del scroll, setear 'bottom' significa setear la posición del scroll al final de la tabla.</td>
@@ -256,10 +268,25 @@ Sintaxis para llamar a un método: `$('#table').bootstrapTable('method', paramet
         <td>none</td>
         <td>Alterna la vista entre tabla y tarjeta.</td>
     </tr>
-	<tr>
-        <td>deleteCookie</td>
-        <td>cookie name</td>
-        <td>Elimina una cookie creada. Debe usar: 'sortOrder', 'sortName', 'pageNumber' o 'pageList'.</td>
+    <tr>
+        <td>expandRow</td>
+        <td>index</td>
+        <td>Expande la fila que tiene el index pasado por parámetro si la opción detail view está en True.</td>
+    </tr>
+    <tr>
+        <td>collapseRow</td>
+        <td>index</td>
+        <td>Colapsa la fila que tiene el index pasado por parámetro si la opción detail view está en True.</td>
+    </tr>
+    <tr>
+        <td>expandAllRows</td>
+        <td>is subtable</td>
+        <td>Expande todas las filas si la opción detail view está en True..</td>
+    </tr>
+    <tr>
+        <td>collapseAllRows</td>
+        <td>is subtable</td>
+        <td>Colapsa todas las filas si la opción detail view está en True.</td>
     </tr>
     </tbody>
 </table>

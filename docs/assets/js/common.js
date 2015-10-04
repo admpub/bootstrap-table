@@ -31,4 +31,33 @@ $(function () {
         $iframe.attr('src', $iframe.data('src'));
         $(this).remove();
     });
+
+    if (location.href.indexOf('documentation') > -1) {
+        var query = {
+            t: '',
+            c: '',
+            e: '',
+            m: '',
+            l: ''
+        };
+        $.each(location.search.substring(1).split('&'), function (i, t) {
+            var arr = t.split('=');
+            if (query.hasOwnProperty(arr[0])) {
+                query[arr[0]] = arr[1];
+            }
+        });
+        $.each(query, function (id, value) {
+            $('#' + id).bootstrapTable({
+                searchText: value
+            });
+        });
+    }
 });
+
+function methodFormatter(value) {
+    if (!value) {
+        return '';
+    }
+    var href = 'http://issues.wenzhixin.net.cn/bootstrap-table/#methods/' + value + '.html';
+    return '<a target="_blank" href="' + href + '"><i class="glyphicon glyphicon-screenshot"></i></a>';
+}

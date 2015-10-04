@@ -5,7 +5,7 @@
 Las opciones de la tabla están definidas en `jQuery.fn.bootstrapTable.defaults`.
 
 <table class="table"
-       data-toggle="table"
+       id="t"
        data-search="true"
        data-show-toggle="true"
        data-show-columns="true"
@@ -230,6 +230,13 @@ Las opciones de la tabla están definidas en `jQuery.fn.bootstrapTable.defaults`
         <td>false</td>
         <td>Habilita el campo para búsqueda.</td>
     </tr>
+    <tr>
+        <td>strictSearch</td>
+        <td>data-strict-search</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>Habilita la busqueda exacta.</td>
+    </tr>
 	<tr>
         <td>searchText</td>
         <td>data-search-text</td>
@@ -439,6 +446,13 @@ Las opciones de la tabla están definidas en `jQuery.fn.bootstrapTable.defaults`
         <td>Boolean</td>
         <td>true</td>
         <td>False para deshabilitar el ordenamiento en todas las columnas.</td>
+    </tr>
+    <tr>
+        <td>silentSort</td>
+        <td>data-silent-sort</td>
+        <td>Boolean</td>
+        <td>true</td>
+        <td>Setear a <code>false</code> para ordenar los datos silenciosamente. Esta opción funciona cuando la opción sidePagination es seteada a <code>server</code>.</td>
     </tr>
     <tr>
         <td>rowStyle</td>

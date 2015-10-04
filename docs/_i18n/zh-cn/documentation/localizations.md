@@ -1,9 +1,9 @@
-# Localizations []({{ site.repo }}/blob/master/docs/_i18n/{{ site.lang }}/documentation/localizations.md)
+# 多语言 []({{ site.repo }}/blob/master/docs/_i18n/{{ site.lang }}/documentation/localizations.md)
 
 ---
 
 <table class="table"
-       data-toggle="table"
+       id="l"
        data-search="true"
        data-show-toggle="true"
        data-show-columns="true"

@@ -3,7 +3,7 @@
 ---
 
 <table class="table"
-       data-toggle="table"
+       id="l"
        data-search="true"
        data-show-toggle="true"
        data-show-columns="true"
@@ -82,4 +82,17 @@ And then use JavaScript to switch locale:
 $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['en-US']);
 // $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['zh-CN']);
 // ...
+```
+
+Or use data attributes to set locale for table:
+
+```html
+<table data-toggle="table" data-locale="en-US">
+</table>
+```
+
+Or use JavaScript to set locale for table:
+
+```js
+$('table').bootstrapTable({locale:'en-US'});
 ```

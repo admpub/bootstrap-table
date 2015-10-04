@@ -3,7 +3,7 @@
 ---
 
 <table class="table"
-       data-toggle="table"
+       id="e"
        data-search="true"
        data-show-toggle="true"
        data-show-columns="true"
@@ -87,6 +87,7 @@
         <td>
         Se ejecuta cuando el usuario chequea una fila, los parámetros contienen: <br>
         row: el registro que corresponde a la fila chequeada.
+        $element: el elemento DOM chequeado.
         </td>
     </tr>
     <tr>
@@ -96,6 +97,7 @@
         <td>
         Se ejecuta cuando el usuario des-chequea una fila, los parámetros contienen: <br>
         row: el registro que corresponde a la fila deschequeada.
+        $element: el elemento DOM deschequeado.
         </td>
     </tr>
     <tr>

@@ -5,7 +5,7 @@
 The table options are defined in `jQuery.fn.bootstrapTable.defaults`.
 
 <table class="table"
-       data-toggle="table"
+       id="t"
        data-search="true"
        data-show-toggle="true"
        data-show-columns="true"
@@ -108,6 +108,13 @@ The table options are defined in `jQuery.fn.bootstrapTable.defaults`.
         <td>The data to be loaded.</td>
     </tr>
     <tr>
+        <td>dataField</td>
+        <td>data-data-field</td>
+        <td>String</td>
+        <td>'rows'</td>
+        <td>Key in incoming json containing rows data list.</td>
+    </tr>
+    <tr>
         <td>ajax</td>
         <td>data-ajax</td>
         <td>Function</td>
@@ -126,7 +133,15 @@ The table options are defined in `jQuery.fn.bootstrapTable.defaults`.
         <td>data-url</td>
         <td>String</td>
         <td>undefined</td>
-        <td>A URL to request data from remote site.</td>
+        <td>
+        	A URL to request data from remote site.
+        	<br/>Note that the required server response format is different depending on whether the 'sidePagination'
+        	option is specified. See the following examples:
+        	<ul>
+        		<li><a href="https://github.com/wenzhixin/bootstrap-table-examples/blob/master/json/data1.json">Without server-side pagination</a></li>
+        		<li><a href="https://github.com/wenzhixin/bootstrap-table-examples/blob/master/json/data2.json">With server-side pagination</a></li>
+        	</ul>
+        </td>
     </tr>
     <tr>
         <td>cache</td>
@@ -199,7 +214,16 @@ The table options are defined in `jQuery.fn.bootstrapTable.defaults`.
         <td>data-side-pagination</td>
         <td>String</td>
         <td>'client'</td>
-        <td>Defines the side pagination of table, can only be 'client' or 'server'. Using 'server' side requires either setting the 'url' or 'ajax' option</td>
+        <td>
+        	Defines the side pagination of table, can only be 'client' or 'server'.
+        	Using 'server' side requires either setting the 'url' or 'ajax' option.
+        	<br/>Note that the required server response format is different depending on whether
+        	the 'client' or 'server' option is specified. See the following examples:
+        	<ul>
+        		<li><a href="https://github.com/wenzhixin/bootstrap-table-examples/blob/master/json/data1.json">Without server-side pagination</a></li>
+        		<li><a href="https://github.com/wenzhixin/bootstrap-table-examples/blob/master/json/data2.json">With server-side pagination</a></li>
+        	</ul>
+        </td>
     </tr>
     <tr>
         <td>pageNumber</td>
@@ -242,6 +266,13 @@ The table options are defined in `jQuery.fn.bootstrapTable.defaults`.
         <td>Boolean</td>
         <td>false</td>
         <td>Enable the search input.</td>
+    </tr>
+    <tr>
+        <td>strictSearch</td>
+        <td>data-strict-search</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>Enable the strict search.</td>
     </tr>
 	<tr>
         <td>searchText</td>
@@ -437,11 +468,11 @@ The table options are defined in `jQuery.fn.bootstrapTable.defaults`.
     <tr>
         <td>toolbar</td>
         <td>data-toolbar</td>
-        <td>String</td>
+        <td>String | Node</td>
         <td>undefined</td>
         <td>
         A jQuery selector that indicates the toolbar, for example:<br>
-        #toolbar, .toolbar.
+        #toolbar, .toolbar, or a DOM node.
         </td>
     </tr>
     <tr>
@@ -464,6 +495,13 @@ The table options are defined in `jQuery.fn.bootstrapTable.defaults`.
         <td>Boolean</td>
         <td>true</td>
         <td>False to disable sortable of all columns.</td>
+    </tr>
+    <tr>
+        <td>silentSort</td>
+        <td>data-silent-sort</td>
+        <td>Boolean</td>
+        <td>true</td>
+        <td>Set <code>false</code> to sort the data silently. This options works when the sidePagination option is set to <code>server</code>.</td>
     </tr>
     <tr>
         <td>rowStyle</td>
@@ -489,5 +527,24 @@ The table options are defined in `jQuery.fn.bootstrapTable.defaults`.
         Support all custom attributes.
         </td>
     </tr>
-    </tbody>
+     <tr>
+        <td>locale</td>
+        <td>data-locale</td>
+        <td>string</td>
+        <td>undefined</td>
+        <td>
+        Sets the locale to use (i.e. <code>'fr-CA'</code>). Locale files must be pre-loaded.
+        Allows for fallback locales, if loaded, in the following order:<br>
+        <ol>
+        <li>First tries for the locale as specified,</li>
+        <li>Then tries the locale with <code>'_'</code> translated to 
+        <code>'-'</code> and the region code upper cased,</li>
+        <li>Then tries the the short locale code (i.e. <code>'fr'</code> instead of <code>'fr-CA'</code>),</li>
+        <li>And finally will use the last locale file loaded (or the default locale if no locales loaded).</li>
+        </ol>
+        If left undfined or an empty string, uses the last locale loaded (or <code>'en-US'</code>
+        if no locale files loaded).
+        </td>
+    </tr>
+   </tbody>
 </table>

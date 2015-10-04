@@ -1,22 +1,22 @@
-# Table options []({{ site.repo }}/blob/master/docs/_i18n/{{ site.lang }}/documentation/table-options.md)
+# 表格参数 []({{ site.repo }}/blob/master/docs/_i18n/{{ site.lang }}/documentation/table-options.md)
 
 ---
 
-The table options is defined in `jQuery.fn.bootstrapTable.defaults`.
+表格的参数定义在 `jQuery.fn.bootstrapTable.defaults`。
 
 <table class="table"
-       data-toggle="table"
+       id="t"
        data-search="true"
        data-show-toggle="true"
        data-show-columns="true"
        data-mobile-responsive="true">
     <thead>
     <tr>
-        <th>Name</th>
-        <th>Attribute</th>
-        <th>Type</th>
-        <th>Default</th>
-        <th>Description</th>
+        <th>名称</th>
+        <th>标签</th>
+        <th>类型</th>
+        <th>默认</th>
+        <th>描述</th>
     </tr>
     </thead>
     <tbody>
@@ -25,21 +25,21 @@ The table options is defined in `jQuery.fn.bootstrapTable.defaults`.
         <td>data-toggle</td>
         <td>String</td>
         <td>'table'</td>
-        <td>Activate bootstrap table without writing JavaScript.</td>
+        <td>不用写 JavaScript 直接启用表格。</td>
     </tr>
     <tr>
         <td>classes</td>
         <td>data-classes</td>
         <td>String</td>
         <td>'table table-hover'</td>
-        <td>The class name of table. By default, the table is bordered, you can add 'table-no-bordered' to remove table-bordered style.</td>
+        <td>表格的类名称。默认情况下，表格是有边框的，你可以添加 'table-no-bordered' 来删除表格的边框样式。</td>
     </tr>
     <tr>
         <td>height</td>
         <td>data-height</td>
         <td>Number</td>
         <td>undefined</td>
-        <td>The height of table.</td>
+        <td>定义表格的高度。</td>
     </tr>
     <tr>
         <td>undefinedText</td>
@@ -237,6 +237,13 @@ The table options is defined in `jQuery.fn.bootstrapTable.defaults`.
         <td>Boolean</td>
         <td>false</td>
         <td>Enable the search input.</td>
+    </tr>
+    <tr>
+        <td>strictSearch</td>
+        <td>data-strict-search</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>Enable the strict search.</td>
     </tr>
 	<tr>
         <td>searchText</td>
@@ -459,6 +466,13 @@ The table options is defined in `jQuery.fn.bootstrapTable.defaults`.
         <td>Boolean</td>
         <td>true</td>
         <td>False to disable sortable of all columns.</td>
+    </tr>
+    <tr>
+        <td>silentSort</td>
+        <td>data-silent-sort</td>
+        <td>Boolean</td>
+        <td>true</td>
+        <td>Set <code>false</code> to sort the data silently. This options works when the sidePagination option is set to <code>server</code>.</td>
     </tr>
     <tr>
         <td>rowStyle</td>
