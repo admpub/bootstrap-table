@@ -1,34 +1,30 @@
 ### Latest release
 
-#### v{{ site.current_version }} (2015-09-30)
+#### v{{ site.current_version }} (2016-01-18)
 
-- [enh] Update bootstrap-table-cookie.js.
-- [enh] Use options for detailView's open/close icons.
-- [enh] Added `refreshOptions` and `gtHiddenColumns` method.
-- [enh] Added `datepicker` option to Filter Control.
-- [bug] Fix #936 Sort carets should not be inline-styled by JS.
-- [bug] Fix table header width bug when setting table to no bordered.
-- [bug] Fix #938, fix #940: Multiple Sort and Hide/Show column.
-- [bug] Fix #970: `click`and `dblclick` bug on no-rows table.
-- [bug] Fix #967: unselected column while column sorted display error.
-- [enh] Support title feature in cells.
-- [enh] Improved cookie, mobile extension.
-- [enh] Added group-by, angular extension.
-- [enh] Added option for setting locale.
-- [enh] Added `exportDataType` option for export extension.
-- [enh] Add fa-IR, ca-ES, es-ES, et-EE and af-ZA locales.
-- [enh] Supported complex header with `rowspans` and `colspans`.
-- [enh] Added `searchFomatter` column option.
-- [bug] Fixed ResetRow function and undefined column search bug.
-- [bug] Fixed #639: footer resizing problem.
-- [enh] Added resetSearch method to reset the search text.
-- [enh] Supported flat json.
-- [enh] Improved reorder-columns extension.
-- [enh] Added multiple-search, accent-neutralise extension.
-- [enh] Added fixed-columns extension.
-- [enh] Added `$.fn.bootstrapTable.utils` tools.
-- [enh] Added `expandRow` and `collapseRow` methods.
-- [enh] Updated `showRow`, `hideRow` and `updateCell` methods.
-- [bug] Fix #1390: radio maintainSelected bug.
-- [bug] Fix #1421: checkBy filter enabled.
-- [bug] Remove `bootstrap-table-all.js` and `bootstrap-table-all.min.js`.
+- [bug] Fixed #1619: sub-table checkbox selects all the table.
+- [bug] Fixed icons for ability customizing.
+- [bug] Fixed #1677: paginationSwitch for server-side.
+- [bug] Fixed #1613: padding in footer.
+- [bug] Fixed #1742: showRow & hideRow param checks.
+- [bug] Fixed getItemField bug.
+- [bug] Fixed #617: server side pagination uses `this.options.searchText`.
+- [bug] Fixed class name does not apply to checkbox field bug.
+- [bug] Fixed clear function and searchFormatter option of filter-control extension.
+- [bug] Fixed year computation on cookie extension.
+- [bug] Fixed ReorderRows init when reorderable is false.
+- [bug] Fix #1660: removed powerpoint type of export extension.
+- [enh] Added `title` attribute to pagination controls defining the page number.
+- [enh] Added `escape` option.
+- [enh] Added `searchOnEnterKey` option.
+- [enh] Added `updateFormatText` method.
+- [enh] Added a third parameter to `detailFormatter` method passing the jQuery element.
+- [enh] Added new param for `updateCell` method to avoid table reinitialization.
+- [enh] Removed outline of th.
+- [enh] Added extension.json and composer.json files.
+- [enh] Added alternative group-by extension.
+- [enh] Added sticky-header extension.
+- [enh] Added filterLocal option to filter-control extension.
+- [enh] Enabled data attributes for editable column.
+- [enh] Added IconSize option to export extension.
+- [enh] Added tooltip for filter-control toolbar button.

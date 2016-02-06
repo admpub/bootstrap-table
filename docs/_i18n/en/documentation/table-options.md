@@ -76,6 +76,13 @@ The table options are defined in `jQuery.fn.bootstrapTable.defaults`.
         <td>'glyphicon'</td>
         <td>Defines icon set name ('glyphicon' or 'fa' for FontAwesome). By default 'glyphicon' is used. </td>
     </tr>
+     <tr>
+        <td>iconSize</td>
+        <td>data-icon-size</td>
+        <td>String</td>
+        <td>undefined</td>
+        <td>Defines icon size: <ul><li>undefined => btn</li><li>xs => btn-xs</li><li>sm => btn-sm</li><li>lg => btn-lg</li></ul>
+    </tr>
     <tr>
         <td>icons</td>
         <td>data-icons</td>
@@ -177,7 +184,7 @@ The table options are defined in `jQuery.fn.bootstrapTable.defaults`.
         <td>Function</td>
         <td>function(params) {<br>return params;<br>}</td>
         <td>
-        When requesting remote data, you can send additional parameters by modifying queryParams. 
+        When requesting remote data, you can send additional parameters by modifying queryParams.
         If queryParamsType = 'limit', the params object contains: <br>
         limit, offset, search, sort, order
         Else, it contains: <br>
@@ -208,6 +215,13 @@ The table options are defined in `jQuery.fn.bootstrapTable.defaults`.
         <td>Boolean</td>
         <td>false</td>
         <td>True to show a pagination toolbar on table bottom.</td>
+    </tr>
+    <tr>
+        <td>onlyInfoPagination</td>
+        <td>data-only-info-pagination</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>True to show only the quantity of the data that is showing in the table. It needs the pagination table options is set to true.</td>
     </tr>
     <tr>
         <td>sidePagination</td>
@@ -261,11 +275,27 @@ The table options are defined in `jQuery.fn.bootstrapTable.defaults`.
         <td>True to display pagination or card view smartly.</td>
     </tr>
     <tr>
+        <td>escape</td>
+        <td>data-escape</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>Escapes a string for insertion into HTML,
+        replacing <code>&</code>, <code><</code>, <code>></code>,
+        <code>"</code>, <code>`</code>, and <code>'</code> characters.</td>
+    </tr>
+    <tr>
         <td>search</td>
         <td>data-search</td>
         <td>Boolean</td>
         <td>false</td>
         <td>Enable the search input.</td>
+    </tr>
+    <tr>
+        <td>searchOnEnterKey</td>
+        <td>data-search-on-enter-key</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>The search method will be executed until the Enter key is pressed.</td>
     </tr>
     <tr>
         <td>strictSearch</td>
@@ -378,8 +408,8 @@ The table options are defined in `jQuery.fn.bootstrapTable.defaults`.
         <td>detailFormatter</td>
         <td>data-detail-formatter</td>
         <td>Function</td>
-        <td>function(index, row) {<br>return '';<br>}</td>
-        <td>Format your detail view when <code>detailView</code> is set to <code>true</code>.</td>
+        <td>function(index, row, element) {<br>return '';<br>}</td>
+        <td>Format your detail view when <code>detailView</code> is set to <code>true</code>. Return a String and it will be appended into the detail view cell, optionally render the element directly using the third parameter which is a jQuery element of the target cell.</td>
     </tr>
     <tr>
         <td>searchAlign</td>
@@ -424,13 +454,6 @@ The table options are defined in `jQuery.fn.bootstrapTable.defaults`.
         <td>Indicate how to align the pagination detail. 'left', 'right' can be used.</td>
     </tr>
     <tr>
-        <td>paginationFirstText</td>
-        <td>data-pagination-first-text</td>
-        <td>String</td>
-        <td>'&lt;&lt;'</td>
-        <td>Indicate the icon or text to be shown in the pagination detail, the first button of the pagination detail.</td>
-    </tr>
-    <tr>
         <td>paginationPreText</td>
         <td>data-pagination-pre-text</td>
         <td>String</td>
@@ -443,13 +466,6 @@ The table options are defined in `jQuery.fn.bootstrapTable.defaults`.
         <td>String</td>
         <td>'&gt;'</td>
         <td>Indicate the icon or text to be shown in the pagination detail, the next button.</td>
-    </tr>
-    <tr>
-        <td>paginationLastText</td>
-        <td>data-pagination-last-text</td>
-        <td>String</td>
-        <td>'&gt;&gt;'</td>
-        <td>Indicate the icon or text to be shown in the pagination detail, the last button.</td>
     </tr>
     <tr>
         <td>clickToSelect</td>
@@ -512,7 +528,15 @@ The table options are defined in `jQuery.fn.bootstrapTable.defaults`.
         The row style formatter function, takes two parameters: <br>
         row: the row record data.<br>
         index: the row index.<br>
-        Support classes or css.
+        Support classes or css. Example usage:<br>
+<pre>
+function rowStyle(value, row, index) {
+  return {
+    classes: 'text-nowrap another-class',
+    css: {"color": "blue", "font-size": "50px"}
+  };
+}
+</pre>
         </td>
     </tr>
     <tr>
@@ -537,7 +561,7 @@ The table options are defined in `jQuery.fn.bootstrapTable.defaults`.
         Allows for fallback locales, if loaded, in the following order:<br>
         <ol>
         <li>First tries for the locale as specified,</li>
-        <li>Then tries the locale with <code>'_'</code> translated to 
+        <li>Then tries the locale with <code>'_'</code> translated to
         <code>'-'</code> and the region code upper cased,</li>
         <li>Then tries the the short locale code (i.e. <code>'fr'</code> instead of <code>'fr-CA'</code>),</li>
         <li>And finally will use the last locale file loaded (or the default locale if no locales loaded).</li>

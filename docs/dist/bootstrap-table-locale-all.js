@@ -82,14 +82,15 @@
 
 /**
  * Bootstrap Table Catalan translation
- * Author: Marc Pina<iwalkalone69@gmail.com>
+ * Authors: Marc Pina<iwalkalone69@gmail.com>
+ *          Claudi Martinez<claudix.kernel@gmail.com>
  */
 (function ($) {
     'use strict';
 
     $.fn.bootstrapTable.locales['ca-ES'] = {
         formatLoadingMessage: function () {
-            return 'Si us plau esperi...';
+            return 'Espereu, si us plau...';
         },
         formatRecordsPerPage: function (pageNumber) {
             return pageNumber + ' resultats per pàgina';
@@ -98,19 +99,19 @@
             return 'Mostrant de ' + pageFrom + ' fins ' + pageTo + ' - total ' + totalRows + ' resultats';
         },
         formatSearch: function () {
-            return 'Buscar';
+            return 'Cerca';
         },
         formatNoMatches: function () {
             return 'No s\'han trobat resultats';
         },
         formatPaginationSwitch: function () {
-            return 'Amagar/Mostrar paginació';
+            return 'Amaga/Mostra paginació';
         },
         formatRefresh: function () {
-            return 'Refrescar';
+            return 'Refresca';
         },
         formatToggle: function () {
-            return 'Amagar/Mostrar';
+            return 'Alterna formatació';
         },
         formatColumns: function () {
             return 'Columnes';
@@ -285,7 +286,7 @@
             return 'Loading, please wait...';
         },
         formatRecordsPerPage: function (pageNumber) {
-            return pageNumber + ' records per page';
+            return pageNumber + ' rows per page';
         },
         formatShowingRows: function (pageFrom, pageTo, totalRows) {
             return 'Showing ' + pageFrom + ' to ' + pageTo + ' of ' + totalRows + ' rows';
@@ -316,6 +317,7 @@
     $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['en-US']);
 
 })(jQuery);
+
 /**
  * Bootstrap Table Spanish (Argentina) translation
  * Author: Felix Vera (felix.vera@gmail.com)
@@ -795,6 +797,7 @@
 /**
  * Bootstrap Table Italian translation
  * Author: Davide Renzi<davide.renzi@gmail.com>
+ * Author: Davide Borsatto <davide.borsatto@gmail.com>
  */
 (function ($) {
     'use strict';
@@ -804,7 +807,7 @@
             return 'Caricamento in corso...';
         },
         formatRecordsPerPage: function (pageNumber) {
-            return pageNumber + ' records per pagina';
+            return pageNumber + ' elementi per pagina';
         },
         formatShowingRows: function (pageFrom, pageTo, totalRows) {
             return 'Pagina ' + pageFrom + ' di ' + pageTo + ' (' + totalRows + ' records)';
@@ -813,13 +816,13 @@
             return 'Cerca';
         },
         formatNoMatches: function () {
-            return 'Nessun record trovato';
+            return 'Nessun elemento trovato';
         },
         formatRefresh: function () {
-            return 'Rinfrescare';
+            return 'Aggiorna';
         },
         formatToggle: function () {
-            return 'Alternare';
+            return 'Alterna';
         },
         formatColumns: function () {
             return 'Colonne';
@@ -864,6 +867,9 @@
         },
         formatColumns: function () {
             return '列';
+        },
+        formatAllRows: function () {
+            return 'すべて';
         }
     };
 
@@ -982,6 +988,9 @@
         },
         formatColumns: function () {
             return 'Lajur';
+        },
+        formatAllRows: function () {
+            return 'Semua';
         }
     };
 
@@ -1041,13 +1050,28 @@
             return pageNumber + ' records per pagina';
         },
         formatShowingRows: function (pageFrom, pageTo, totalRows) {
-            return 'Toon ' + pageFrom + ' tot ' + pageTo + ' van ' + totalRows + ' records';
+            return 'Toon ' + pageFrom + ' tot ' + pageTo + ' van ' + totalRows + ' record' + ((totalRows > 1) ? 's' : '');
+        },
+        formatDetailPagination: function (totalRows) {
+            return 'Toon ' + totalRows + ' record' + ((totalRows > 1) ? 's' : '');
         },
         formatSearch: function () {
             return 'Zoeken';
         },
         formatNoMatches: function () {
             return 'Geen resultaten gevonden';
+        },
+        formatRefresh: function () {
+           return 'Vernieuwen';
+        },
+        formatToggle: function () {
+          return 'Omschakelen';
+        },
+        formatColumns: function () {
+          return 'Kolommen';
+        },
+        formatAllRows: function () {
+          return 'Alle';
         }
     };
 
@@ -1237,6 +1261,9 @@
         },
         formatColumns: function () {
             return 'Колонки';
+        },
+        formatClearFilters: function () {
+            return 'Очистить фильтры';
         }
     };
 
@@ -1564,13 +1591,13 @@
             return '搜尋';
         },
         formatNoMatches: function () {
-            return '沒有找符合的結果';
+            return '沒有找到符合的結果';
         },
         formatPaginationSwitch: function () {
             return '隱藏/顯示分頁';
         },
         formatRefresh: function () {
-            return '刷新';
+            return '重新整理';
         },
         formatToggle: function () {
             return '切換';

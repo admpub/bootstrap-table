@@ -15,6 +15,9 @@ The calling method syntax: `$('#table').bootstrapTable('method', parameter);`.
         <th>Name</th>
         <th>Parameter</th>
         <th>Description</th>
+        <th data-formatter="methodFormatter"
+            data-align="center"
+            data-valign="middle">Example</th>
     </tr>
     </thead>
     <tbody>
@@ -27,13 +30,13 @@ The calling method syntax: `$('#table').bootstrapTable('method', parameter);`.
     <tr>
         <td>getSelections</td>
         <td>none</td>
-        <td>Return selected rows, when no record selected, am empty array will return.</td>
+        <td>Return selected rows, when no record selected, an empty array will return.</td>
         <td>getSelections</td>
     </tr>
     <tr>
         <td>getAllSelections</td>
         <td>none</td>
-        <td>Return all selected rows contain search or filter, when no record selected, am empty array will return.</td>
+        <td>Return all selected rows contain search or filter, when no record selected, an empty array will return.</td>
         <td>getAllSelections</td>
     </tr>
     <tr>
@@ -45,9 +48,7 @@ The calling method syntax: `$('#table').bootstrapTable('method', parameter);`.
     <tr>
         <td>getRowByUniqueId</td>
         <td>id</td>
-        <td>
-        Get data from table, the row that contains the id passed by parameter.
-        </td>
+        <td>Get data from table, the row that contains the id passed by parameter.</td>
         <td>getRowByUniqueId</td>
     </tr>
     <tr>
@@ -75,8 +76,8 @@ The calling method syntax: `$('#table').bootstrapTable('method', parameter);`.
         Remove data from table, the params contains two properties: <br>
         field: the field name of remove rows. <br>
         values: the array of values for rows which should be removed.
-        <td>remove</td>
         </td>
+        <td>remove</td>
     </tr>
     <tr>
         <td>removeAll</td>
@@ -112,19 +113,28 @@ The calling method syntax: `$('#table').bootstrapTable('method', parameter);`.
         row: the new row data.
         </td>
     </tr>
+    <tr>
+        <td>updateByUniqueId</td>
+        <td>params</td>
+        <td>
+        Update the specified row, the param contains following properties: <br>
+        id: a row id where the id should be the uniqueid field assigned to the table. <br>
+        row: the new row data.
+        </td>
+    </tr>
 	<tr>
         <td>showRow</td>
         <td>params</td>
-        <td>Show the specified row. the param contains following properties:
-        index: the row index or the uniqueId.
-        isIdField: Boolean to indicates if index is the uniqueId or the row or not.</td>
+        <td>Show the specified row. The param must contain at least one of the following properties:
+        index: the row index.
+        uniqueId: the value of the uniqueId for that row.</td>
     </tr>
     <tr>
         <td>hideRow</td>
         <td>params</td>
-        <td>Hide the specified row. the param contains following properties:
-        index: the row index or the uniqueId.
-        isIdField: Boolean to indicates if index is the uniqueId or the row or not.</td>
+        <td>Hide the specified row. The param must contain at least one of the following properties:
+        index: the row index.
+        uniqueId: the value of the uniqueId for that row.</td>
     </tr>
     <tr>
         <td>getRowsHidden</td>
@@ -151,6 +161,8 @@ The calling method syntax: `$('#table').bootstrapTable('method', parameter);`.
         index: the row index. <br>
         field: the field name.<br>
         value: the new field value.
+        <br>
+        To disable table re-initialization you can set <code>{reinit: false}</code>
         </td>
     </tr>
     <tr>
@@ -258,7 +270,7 @@ The calling method syntax: `$('#table').bootstrapTable('method', parameter);`.
     <tr>
         <td>filterBy</td>
         <td>params</td>
-        <td>(Can use only in client-side)Filter data in table, eg. you can filter <code>{age: 10}</code> to show the data only age is equal to 10.</td>
+        <td>(Can use only in client-side) Filter data in table, e.g. you can filter <code>{age: 10}</code> to show the data only age is equal to 10.  You can also filter with an array of values, as in: <code>{age: 10, hairColor: ["blue", "red", "green"]} to find data where age is equal to 10 and hairColor is either blue, red, or green.</td>
     </tr>
     <tr>
         <td>selectPage</td>
